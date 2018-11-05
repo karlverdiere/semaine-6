@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TheGossipProject</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <% if session[:user_id] == nil %>
+      <a class="navbar-brand" href="/static_pages/home">acceuil</a>
+      <% else %>
+        <a class="navbar-brand" href="/static_pages/home">club</a>
+        <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                 <% if session[:user_id] %>
+                 <a class="nav-link" href="/users/deco">se deconnecter <span class="sr-only">(current)</span></a>
+                 <% else %>
+                 <a class="nav-link" href=/sessions/login>se connecter <span class="sr-only">(current)</span></a>
+                <% end %>
+               </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/new">crée un compte</a>
+          </li>
+      </div>
+    </nav>
+    <% if session[:user] %>
+        <h4>Bienvenue  sur la page  <%= session[:user][0]["name"] %> !</h4>
+       <h5>Tu es l'user n° <%= session[:user][0]["id"] %> sur cette page youpi !</h5>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>

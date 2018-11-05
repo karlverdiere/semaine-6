@@ -1,0 +1,14 @@
+<h1>CREER VOTRE COMPTE </h1>
+
+<%= form_for @users, url: {action: "create"}  do |f| %>
+your  name : <%= f.text_field :name %> <br />
+ton  nom : <%= f.text_field :nom %> <br />
+
+Ton email <%= f.text_field :email %><br />
+Ton mot de passe   <%= f.text_field :password_digest %><br />
+
+  <%= f.submit "create" %>
+<% end %>
+
+<a href="/user/login">se connecter</a><br></br>
+<a href="/user/home">Retourner à l'accueil</a>

@@ -1,0 +1,11 @@
+<%= @all_user.each do |f| %>
+
+<% f.name %>
+<% f.email %>
+<% f.password_digest %>
+<br/>
+
+<% end %>
+
+<br/>
+<a href="/users/home">Retourner à l'accueil</a>
