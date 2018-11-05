@@ -1,3 +1,4 @@
+      https://appi-club.herokuapp.com/static_pages/home mais je vous recommande http://localhost3000/toute les fonctionalité ne sont pas mis a jours sur heroku
 # README
 
 This README would normally document whatever steps are necessary to get the
