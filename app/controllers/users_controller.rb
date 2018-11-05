@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def deco
-     session[:user] = nil
+     session[:user_id] = nil
      redirect_to '/users/deconnection'
    end
    def deconnection
@@ -19,8 +19,13 @@ class UsersController < ApplicationController
    end
 
    def index
+  if session[:user_id]
      @all_user = User.all
+   else
+     flash[:danger] = "error please log in "
+     redirect_to '/sessions/login'
    end
+ end
 
 
 

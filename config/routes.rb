@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     get 'users/new', to: 'users#new'
    post 'users/create', to: 'users#create'
    get 'users/profil', to: 'users#profil'
-    get '/club', to: 'users#index'
+    get 'users/club', to: 'users#index'
 end
