@@ -1,3 +1,6 @@
+      
+      ps:tester le sur locallhost des gros bug de migration de fichier
+      
       https://appi-club.herokuapp.com/static_pages/home mais je vous recommande http://localhost3000/toute les fonctionalité ne sont pas mis a jours sur heroku
 # README
 
